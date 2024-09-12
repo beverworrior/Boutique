@@ -28,7 +28,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['8000-beverworrior-boutique-vhwqa9nziki.ws-eu116.gitpod.io']
 
-
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-beverworrior-boutique-vhwqa9nziki.ws-eu116.gitpod.io',  # Add your Gitpod domain
+]
 # Application definition
 
 INSTALLED_APPS = [
