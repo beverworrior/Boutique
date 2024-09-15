@@ -28,9 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['8000-beverworrior-boutique-vhwqa9nziki.ws-eu116.gitpod.io']
 
-CSRF_TRUSTED_ORIGINS = [
-    'https://8000-beverworrior-boutique-vhwqa9nziki.ws-eu116.gitpod.io',  # Add your Gitpod domain
-]
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -57,7 +55,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
 ]
 
 ROOT_URLCONF = 'boutique_ado.urls'
@@ -81,6 +78,8 @@ TEMPLATES = [
         },
     },
 ]
+
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 AUTHENTICATION_BACKENDS = (
     # Needed to login by username in Django admin, regardless of `allauth`
@@ -158,6 +157,10 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-
 FREE_DELIVERY_THRESHOLD = 50
 STANDARD_DELIVERY_PERCENTAGE = 10
+
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-beverworrior-boutique-vhwqa9nziki.ws-eu116.gitpod.io',
+]
