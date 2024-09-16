@@ -45,13 +45,10 @@ INSTALLED_APPS = [
     'home',
     'products',
     'bag',
-<<<<<<< HEAD
-=======
     'checkout',
 
-    # other
-    'crispy_forms,'
->>>>>>> 1d0ba85 (added checkout and crispy)
+    # Other
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -66,11 +63,14 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'boutique_ado.urls'
 
-<<<<<<< HEAD
-=======
-CRISPY_TEMPLATE_PACK =  'bootstrap4'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
->>>>>>> 1d0ba85 (added checkout and crispy)
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-beverworrior-boutique-vhwqa9nziki.ws-eu116.gitpod.io',  # Add the full URL
+]
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -85,15 +85,13 @@ TEMPLATES = [
                 'django.template.context_processors.request', # required by allauth
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
                 'bag.contexts.bag_contents',
             ],
-<<<<<<< HEAD
-=======
             'builtins': [
                 'crispy_forms.templatetags.crispy_forms_tags',
                 'crispy_forms.templatetags.crispy_forms_field',
             ]
->>>>>>> 1d0ba85 (added checkout and crispy)
         },
     },
 ]
@@ -178,8 +176,3 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 FREE_DELIVERY_THRESHOLD = 50
 STANDARD_DELIVERY_PERCENTAGE = 10
-
-
-CSRF_TRUSTED_ORIGINS = [
-    'https://8000-beverworrior-boutique-vhwqa9nziki.ws-eu116.gitpod.io',
-]

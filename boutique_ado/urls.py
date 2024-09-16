@@ -25,8 +25,5 @@ urlpatterns = [
     path('', include('home.urls')),
     path('products/', include('products.urls')),
     path('bag/', include('bag.urls')),
-<<<<<<< HEAD
-=======
     path('checkout/', include('checkout.urls')),
->>>>>>> 1d0ba85 (added checkout and crispy)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
